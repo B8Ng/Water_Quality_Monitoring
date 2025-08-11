@@ -1,0 +1,1 @@
+GEN_CSRCS += _node_alpha_32x32.c _setting_alpha_32x32.c _nodeb_alpha_32x32.c _icon_dianchi_4_alpha_32x32.c
