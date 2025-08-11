@@ -1,0 +1,174 @@
+<view class="container">
+  <!--小程序大标题-->
+  <view class="Head_box">  
+    <view>{{head_title}}</view>
+  </view>
+
+
+
+  <!--连接状态-->
+  <view class="Info_box" bind:tap="showPopup">
+    <view>
+      <van-icon wx:if="{{!show}}" name="info-o" />
+      <van-icon wx:if="{{show}}" name="info" />
+        网关节点
+    </view>
+    <view style="color:{{isConnect?'RGB(0,176,80)':'RGB(192,0,0)'}}">
+      {{isConnect?'已连接':'未连接'}}
+    </view>
+  </view>
+
+  <!--节点设备-->
+  <view class="Devices_title">
+    采集节点设备
+  </view>
+
+  <view class="Devices_box" style="height: 762rpx; display: flex; box-sizing: border-box">
+    <view class="Box_1" style="height: 760rpx; display: flex; box-sizing: border-box">
+      <!-- 节点图标和节点标题 -->
+      <image src="../../images/node.png" style="width: 50px;height: 50px;margin: 35rpx 0rpx 0rpx 50rpx;" ></image>
+      <view style="margin: 40rpx 20rpx 0rpx 100rpx;font-size: 28px;" >采集节点1</view>
+      <!-- 四个内容 -->
+      <view class="Box_1_1" >
+       <image src="../../images/ph.png" style="width: 127rpx; height: 50px; margin: 40rpx 0rpx 0rpx 20rpx; display: block; box-sizing: border-box" ></image>
+       <view class="Box_1_1_1" >
+        <text style="margin: 30rpx 0rpx 0rpx 60rpx; font-size: 40rpx; height: 49rpx; display: block; box-sizing: border-box; width: 95rpx">PH值</text>
+        <view style="margin: -30rpx 0rpx 0rpx 60rpx; font-size: 40rpx; height: 49rpx; display: block; box-sizing: border-box; width: 52rpx; position: relative; left: 39rpx; top: 0rpx">{{Value_1}}</view>
+       </view>
+      </view>
+      <view class="Box_1_1" >
+        <image src="../../images/diandao.png" style="width: 112rpx; height: 50px; margin: 40rpx 0rpx 0rpx 20rpx; display: block; box-sizing: border-box" ></image>
+        <view class="Box_1_1_1" >
+        <text style="margin: 30rpx 0rpx 0rpx 50rpx; font-size: 40rpx; height: 56rpx; display: block; box-sizing: border-box">NTU值</text>
+        <view style="margin: -30rpx 0rpx 0rpx 60rpx; font-size: 40rpx; height: 56rpx; display: block; box-sizing: border-box; width: 58rpx; position: relative; left: 51rpx; top: 0rpx">{{Value_2}}</view>
+       </view>
+      </view>
+      <view class="Box_1_1"  style="position: relative; left: 0rpx; top: -24rpx">
+        <image src="../../images/hunzhuo.png" style="width: 127rpx; height: 50px; margin: 40rpx 0rpx 0rpx 20rpx; display: block; box-sizing: border-box" ></image>
+        <view class="Box_1_1_1" >
+        <text style="margin: 30rpx 0rpx 0rpx 30rpx; font-size: 40rpx; height: 64rpx; display: block; box-sizing: border-box; width: 124rpx; position: relative; left: 9rpx; top: 8rpx">TDS值</text>
+        <view style="margin: -30rpx 0rpx 0rpx 30rpx; font-size: 50rpx; height: 64rpx; display: block; box-sizing: border-box; width: 89rpx; position: relative; left: 18rpx; top: 0rpx">{{Value_3}}</view>
+       </view>
+      </view>
+      <view class="Box_1_1"  style="position: relative; left: 0rpx; top: -24rpx">
+        <image src="../../images/temp.png" style="width: 100px;height: 70px;margin: 20rpx 0rpx 0rpx 5rpx;" ></image>
+        <view class="Box_1_1_1" >
+        <text style="margin: 30rpx 0rpx 0rpx 10rpx; font-size: 40rpx; height: 62rpx; display: block; box-sizing: border-box">温度值</text>
+        <view style="margin: -30rpx 0rpx 0rpx 10rpx; font-size: 50rpx; height: 62rpx; display: block; box-sizing: border-box; position: relative; left: 18rpx; top: 0rpx">{{Value_4}}</view>
+       </view>
+      </view>
+      <!-- 阈值设置按钮 -->
+      <button class="Box_1_2" bind:tap="showPopup2" style="width: 379rpx; display: flex; box-sizing: border-box; left: -4rpx; top: -60rpx; position: relative">阈值设置</button>
+    
+    </view>
+  </view>    
+
+
+
+
+
+</view>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<van-popup show="{{ show2 }}" bind:close="onClose2" round position="bottom" custom-style="height: 80%;padding: 40rpx;" lock-scroll>
+    <view class="popup-container">
+        <!-- 参数标题 -->
+        <view class="section-title">参数设置</view>
+
+        <!-- PH值设置 -->
+        <view class="parameter-group">
+            <text class="group-title">PH值</text>
+            <view class="picker-row">
+                <view class="picker-item">
+                    <picker bindchange="phMinChange" value="{{phMinIndex}}" range="{{phRange}}">
+                        <view class="picker-label">最低：{{phRange[phMinIndex]}}</view>
+                    </picker>
+                </view>
+                <view class="picker-item">
+                    <picker bindchange="phMaxChange" value="{{phMaxIndex}}" range="{{phRange}}">
+                        <view class="picker-label">最高：{{phRange[phMaxIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <!-- 温度设置 -->
+        <view class="parameter-group">
+            <text class="group-title">温度(℃)</text>
+            <view class="picker-row">
+                <view class="picker-item">
+                    <picker bindchange="tempMinChange" value="{{tempMinIndex}}" range="{{tempRange}}">
+                        <view class="picker-label">最低：{{tempRange[tempMinIndex]}}</view>
+                    </picker>
+                </view>
+                <view class="picker-item">
+                    <picker bindchange="tempMaxChange" value="{{tempMaxIndex}}" range="{{tempRange}}">
+                        <view class="picker-label">最高：{{tempRange[tempMaxIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <!-- TDS设置 -->
+        <view class="parameter-group">
+            <text class="group-title">TDS值</text>
+            <view class="picker-row">
+                <view class="picker-item">
+                    <picker bindchange="tdsChange" value="{{tdsIndex}}" range="{{tdsRange}}">
+                        <view class="picker-label">当前：{{tdsRange[tdsIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <!-- NTU设置 -->
+        <view class="parameter-group">
+            <text class="group-title">NTU值</text>
+            <view class="picker-row">
+                <view class="picker-item">
+                    <picker bindchange="ntuChange" value="{{ntuIndex}}" range="{{ntuRange}}">
+                        <view class="picker-label">当前：{{ntuRange[ntuIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <!-- 设置按钮 -->
+        <button class="submit-btn" bindtap="setThresholds">
+            {{submitting ? '设置中...' : '确认设置'}}
+        </button>
+    </view>
+</van-popup>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<van-popup show="{{ show }}" bind:close="onClose"  round position="top" custom-style="height: 20%" lock-scroll="{{true}}">
+  <view class="popup">
+    嵌入式云控制APPv1.0
+  </view>
+</van-popup>

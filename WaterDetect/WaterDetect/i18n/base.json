@@ -1,0 +1,11 @@
+{
+	"ios": {
+		"name": "测试"
+	},
+	"android": {
+		"name": "测试"
+	},
+	"common": {
+		"name": "测试"
+	}
+}

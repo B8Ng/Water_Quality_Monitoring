@@ -1,0 +1,21 @@
+{
+	"pages": [
+		"pages/index/index"
+	],
+	"window": {
+		"navigationStyle": "custom"
+	},
+	"usingComponents": {
+		"van-button": "@vant/weapp/button/index",
+		"van-icon": "@vant/weapp/icon/index",
+		"van-popup": "@vant/weapp/popup/index",
+		"van-field": "@vant/weapp/field/index",
+		"van-switch": "@vant/weapp/switch/index"
+	},
+	"componentFramework": "glass-easel",
+	"sitemapLocation": "sitemap.json",
+	"lazyCodeLoading": "requiredComponents",
+	"miniApp": {
+		"useAuthorizePage": true
+	}
+}

@@ -1,0 +1,151 @@
+.Head_box{
+  display: flex;
+  justify-content: center;
+  padding-top: 140rpx;
+}
+/* 标题框样式 */
+.Head_box >view {
+  font-size: 55rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+}
+
+/* 提示框样式 */
+.Info_box{
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  height: 120rpx;
+  margin: 38rpx 32rpx 0;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0,0,0,0.3);
+  background-color:white;
+  border-radius: 32rpx;
+  font-size: 49rpx;
+  line-height: 120rpx;
+}
+
+
+
+
+/* 节点框样式 */
+.Devices_title{
+  margin: 32rpx 0 32rpx 34rpx;
+  font-size: 45rpx;
+}
+.Devices_box{
+  display: flex;
+  height: 820rpx;
+  width: 700rpx;
+  border-radius: 30rpx;
+  margin: 0rpx 0rpx 32rpx 25rpx;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0,0,0,0.3);
+  background-color:white;
+}
+
+.Box_1{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.Box_1_1{
+  display: flex;
+  height: 200rpx;
+  width: 310rpx;
+  border-radius: 30rpx;
+  margin: 10rpx 0rpx 50rpx 25rpx;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0,0,0,0.3);
+  background-color:white;
+}
+.Box_1_1_1{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.Box_1_2{
+  display: flex;
+  height: 120rpx;
+  width: 250rpx;
+  border-radius: 30rpx;
+  font-size: 28px;
+  margin: 25rpx 0rpx 200rpx 150rpx;
+  box-shadow: 0 8rpx 20rpx 0 rgba(0,0,0,0.3);
+  background-color:rgb(84, 181, 236);
+  color: #f8f8f8;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+
+/* 阈值设置框样式 */
+.popup-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.parameter-group {
+  margin-bottom: 40rpx;
+}
+
+.group-title {
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+}
+
+.picker-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30rpx;
+}
+
+.picker-item {
+  flex: 1;
+  min-width: 300rpx;
+  background: #f8f8f8;
+  border-radius: 16rpx;
+  padding: 20rpx 30rpx;
+}
+
+.picker-label {
+  font-size: 30rpx;
+  color: #444;
+  text-align: center;
+}
+
+.submit-btn {
+  margin-top: auto;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #1890ff;
+  color: white;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  border-radius: 25rpx; /* 设置圆角半径 */
+}
+
+.submit-btn[disabled] {
+  opacity: 0.7;
+}
+
+/* 提示框样式 */
+.popup {
+  padding: 150rpx 0 0 100rpx;
+  font-size: 55rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+}
